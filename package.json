@@ -1,0 +1,11 @@
+{
+  "name": "study__environment-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    
+  },
+  "author": "Asher",
+  "license": "ISC"
+}
