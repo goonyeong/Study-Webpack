@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
     mode: "development",
@@ -11,13 +12,7 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader'
-                ]
-            },
+            { test: /\.css$/, use: ['style-loader', 'css-loader'] },
             {
                 test: /\.(png|jpg|gif|svg)$/,
                 loader: 'file-loader',
@@ -27,5 +22,12 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    plugins: [
+        new webpack.BannerPlugin({
+            banner: `
+                Build Date: ${new Date().toLocaleTimeString()}
+            `
+        })
+    ],
 }
